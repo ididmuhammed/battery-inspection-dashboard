@@ -1,0 +1,10 @@
+{
+  "activePowerKw": -687.84,
+  "chargeableEnergyMwh": 41.03,
+  "dischargeableEnergyMwh": 4.11,
+  "energyChargedTodayMwh": 1.03,
+  "energyDischargedTodayMwh": 8.47,
+  "socPercent": 9.1,
+  "mode": "on-grid",
+  "timestamp": "2025-04-27T10:24:00+05:30"
+}

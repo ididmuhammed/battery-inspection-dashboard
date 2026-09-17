@@ -1,0 +1,131 @@
+/* ------------------------------------------------------------------ *
+ * Motion for AnimatedSiteScene.
+ * Everything here is slow on purpose: a control-room screen is looked at
+ * for hours, so the only fast movement is the energy flow itself.
+ * ------------------------------------------------------------------ */
+
+.bess-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* --- sun -------------------------------------------------------- */
+.bess-sun {
+  transform-origin: 40px 150px;
+  animation: bess-breathe 9s ease-in-out infinite;
+}
+
+@keyframes bess-breathe {
+  50% {
+    transform: scale(1.045);
+    opacity: 0.94;
+  }
+}
+
+/* --- clouds ----------------------------------------------------- */
+.bess-cloud {
+  will-change: transform;
+}
+
+.bess-cloud--far {
+  animation: bess-drift 210s linear infinite;
+}
+
+.bess-cloud--mid {
+  animation: bess-drift 150s linear infinite;
+}
+
+.bess-cloud--near {
+  animation: bess-drift 96s linear infinite;
+}
+
+@keyframes bess-drift {
+  from {
+    transform: translateX(-260px);
+  }
+  to {
+    transform: translateX(1760px);
+  }
+}
+
+/* --- energy flow ------------------------------------------------ *
+ * The pulse is a dashed white stroke sliding along the beam path, so it
+ * follows the curve rather than a straight translate.                */
+.bess-beam-pulse {
+  stroke-dasharray: 26 150;
+  stroke-dashoffset: 0;
+  animation: bess-run 1.8s linear infinite;
+}
+
+@keyframes bess-run {
+  to {
+    stroke-dashoffset: -176;
+  }
+}
+
+.bess-chevron {
+  animation: bess-nudge 1.8s ease-in-out infinite;
+}
+
+@keyframes bess-nudge {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+/* Charging: everything runs back toward the pack. */
+.bess-scene--import .bess-beam-pulse {
+  animation-direction: reverse;
+}
+
+.bess-scene--import .bess-chevron {
+  transform-box: fill-box;
+  transform-origin: center;
+  rotate: 180deg;
+}
+
+/* Idle: the plant is holding charge, so nothing should look like it moves. */
+.bess-scene--idle .bess-beam-pulse {
+  animation-play-state: paused;
+  opacity: 0.25;
+}
+
+.bess-scene--idle .bess-chevron {
+  animation-play-state: paused;
+  opacity: 0.4;
+}
+
+/* --- ground light ----------------------------------------------- */
+.bess-groundglow {
+  animation: bess-sweep 7s ease-in-out infinite;
+}
+
+@keyframes bess-sweep {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* --- container bolt --------------------------------------------- */
+.bess-bolt {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bess-bolt 3.6s ease-in-out infinite;
+}
+
+@keyframes bess-bolt {
+  50% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bess-scene *,
+  .bess-scene {
+    animation: none !important;
+  }
+}

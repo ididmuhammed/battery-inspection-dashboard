@@ -65,10 +65,14 @@ body {
   text-align: center;
   overflow: hidden;
   isolation: isolate;
+  background-image: url('/background-image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* The animated site scene sits behind everything on both pages. */
-.welcome > :not(.bess-scene):not(.welcome__wash) {
+/* The background photo sits behind everything on this page. */
+.welcome > :not(.welcome__wash) {
   position: relative;
   z-index: 2;
 }
@@ -163,16 +167,16 @@ body {
 
 .welcome__subject {
   margin: 0;
-  font-size: calc(var(--step-3) * 0.85);
-  font-weight: 700;
-  color: #0c3f23;
+  font-size: calc(var(--step-2) * 0.85);
+  font-weight: 600;
+  color: #12492a;
 }
 
 .welcome__site {
   margin: 0.1rem 0 0;
   font-size: calc(var(--step-3) * 0.85);
-  font-weight: 700;
-  color: #0c3f23;;
+  font-weight: 600;
+  color: #08351d;;
 }
 
 .activate {

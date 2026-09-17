@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import type { PlantIdentity } from '../types/telemetry';
 import { ArrowRightIcon, LeafIcon } from '../components/icons';
-import { AnimatedSiteScene } from '../components/AnimatedSiteScene';
 import { StorexLogo } from '../components/StorexLogo';
 
 export interface WelcomePageProps {
@@ -26,7 +25,6 @@ export function WelcomePage({ identity, onActivate }: WelcomePageProps) {
 
   return (
     <main className="welcome">
-      <AnimatedSiteScene flow="idle" showLabels={false} />
       <div className="welcome__wash" aria-hidden />
 
       <span className="welcome__logo">

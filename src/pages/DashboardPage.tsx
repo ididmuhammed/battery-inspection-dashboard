@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import type { LinkStatus, PlantIdentity, Telemetry } from '../types/telemetry';
 import { MetricTile } from '../components/MetricTile';
 import { SiteFlow } from '../components/SiteFlow';
-import { PowerTrace, StateOfCharge } from '../components/PowerTrace';
 import { StatusPill } from '../components/StatusPill';
 import { StorexLogo } from '../components/StorexLogo';
 import {
@@ -28,7 +27,6 @@ export function DashboardPage({
   telemetry,
   status,
   detail,
-  powerHistory,
   lastUpdate,
   onExit,
 }: DashboardPageProps) {

@@ -29,21 +29,21 @@ export function WelcomePage({ identity, onActivate }: WelcomePageProps) {
       <AnimatedSiteScene flow="idle" showLabels={false} />
       <div className="welcome__wash" aria-hidden />
 
-      <div className="welcome__logo">
+      <span className="welcome__logo">
         <StorexLogo />
-      </div>
+      </span>
 
-      <div className="welcome__copy">
+      <span className="welcome__copy">
         <h1 className="welcome__title">Welcome</h1>
         <span className="welcome__rule" aria-hidden>
-          <LeafIcon width={20} height={20} />
+          <LeafIcon width={50} height={50} />
         </span>
         <p className="welcome__rating">
           {identity.ratedPowerMw} MW / {identity.ratedEnergyMwh} MWh
         </p>
         <p className="welcome__subject">Battery Energy Storage System</p>
         <p className="welcome__site">{identity.siteName}</p>
-      </div>
+      </span>
 
       <button type="button" className="activate" onClick={activate} disabled={starting}>
         {starting ? 'Starting the system' : 'Activate the system'}

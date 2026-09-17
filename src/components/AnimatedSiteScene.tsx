@@ -290,6 +290,14 @@ export function AnimatedSiteScene({
         <ShippingContainer x={96} y={288} w={218} h={96} d={46} uid={ref('shellFront')} />
         <ShippingContainer x={286} y={308} w={300} h={104} d={50} uid={ref('shellFront')} doors={false}>
           <path className="bess-bolt" d="M470 330l-28 48h21l-7 40 34-54h-24z" fill="#2ce06d" />
+          <image
+            href="/huawei-logo.png"
+            x={300}
+            y={320}
+            width="160"
+            height="40"
+            preserveAspectRatio="xMidYMid meet"
+          />
         </ShippingContainer>
       </g>
 
